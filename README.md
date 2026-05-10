@@ -16,7 +16,7 @@ To address these limitations, we propose the following contributions:
 
 2- We applied knowledge distillation from a tree-based model (XGBoost) to a neural network model (MLP) for web content analysis, which is a promising approach that has received limited attention in previous studies. This approach leverages the complementary strengths of both architectures to improve generalizability and bridge their individual performance gaps in phishing website detection.
 
-3- Our experimental results show that the proposed approach demonstrates a balance between accuracy and speed at low computational cost.
+3- Our experimental results show that the proposed approach demonstrates a balance between accuracy and speed at low computational cost, with an average accuracy of 97.46% on the test set across five runs and an average computation time of 2.8516×10⁻⁶ seconds per website. 
 
 # Methodology
 
@@ -77,6 +77,8 @@ To quickly reproduce the reported results, use the final dataset (*Final_dataset
 2- Run the *Model_Training_Code_.ipynb*
 
 This will directly reproduce the training and evaluation results using the processed dataset.
+
+The student model (MLP) size: **0.17 MB** (lightweight and computationally efficient)
 
 ### Full Pipeline (Optional):
 Alternatively, the full pipeline can be executed to regenerate the dataset from scratch, starting from data collection and feature extraction through to model training and evaluation, by following these steps:
