@@ -9,6 +9,7 @@ Despite the efforts of researchers to prevent phishing website attacks, current 
 - Language-dependent detection limits generalizability.
 - Features requiring third-party intervention.
 - Limited analysis of the obfuscated JavaScript features.
+
 To address these limitations, we propose the following contributions:
 
 1- We constructed a realistic dataset derived from publicly available phishing and legitimate websites, enriched with features independent of language and third-party services. This dataset contains 32 content-based features, including those that indicate JavaScript obfuscation derived from the structure of JavaScript code that has been statically parsed. We extracted these features from Hypertext Markup Language (HTML) structures, embedded JavaScript elements, and external JavaScript files directly from target sites using static parsing. 
