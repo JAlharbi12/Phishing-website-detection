@@ -23,5 +23,10 @@ To address these limitations, we propose the following contributions:
 ### Data Collection & Data Pre-processing: 
 The dataset used in this study was collected from multiple sources. Legitimate URL data was obtained from publicly available datasets (e.g., [Kaggle](https://www.kaggle.com/datasets/bpmtips/46-million-domain-names-with-size-common-crawl) and [Mendeley Data)](https://doi.org/10.17632/n96ncsr5g4.1) , while phishing URLs were collected using the [PhishTank](https://phishtank.org) API. The API provides JSON reports of URLs, including both verified and unverified entries. Only URLs confirmed as live and verified phishing were retained. For phishing samples, web content was extracted using an API key in batches. Similarly, legitimate samples were also processed in batches. This approach was adopted to manage computational resources efficiently and to avoid interruptions or failures due to large volumes of requests. 
 
+The collected data was then aggregated into a unified dataset. After feature extraction, the dataset contained:
 
+- Legitimate dataset: 30,560 URLs
+- Phishing dataset: 30,368 URLs
+
+Data pre-processing steps (such as duplicate removal and handling missing values) and feature engineering, specifically feature selection, were applied. As a result, **a final dataset of 23,105 samples with 32 static content-based features was used for training and evaluation**. The labels are defined as: *Legitimate website = 0, Phishing website = 1*
 
