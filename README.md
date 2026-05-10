@@ -100,14 +100,12 @@ The PhishTank API used for phishing data collection requires user registration o
 Part of this work is based on an open-source implementation developed by *Biagio Montaruli et al. (2023)*, available at: [extract_features_html.py](https://github.com/advmlphish/raze_to_the_ground_aisec23/blob/main/src/extract_features_html.py)
 
 
-## Contact
-For any questions or inquiries, please contact:
-**Jawaher Alharbi**
-jalharbi0086@stu.kau.edu.sa 
 
-### Authors & Contributions
+## Authors & Contributions
 **Jawaher Alharbi**- Wrote the code, Resources, Data Curation, Methodology, Designed the software, Formal analysis, Project administration
+
 **Manal Bayousef**- Methodology, Formal analysis, Supervision, Project administration
+
 **Hind Almisbahi**- Designed the software, Formal analysis, Supervision, Project administration
 
 
