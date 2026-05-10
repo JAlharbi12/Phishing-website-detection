@@ -15,3 +15,5 @@ To address these limitations, we propose the following contributions:
 
 2- We apply knowledge distillation from a tree-based model (XGBoost) to a neural network model (MLP) for web content analysis, which is a promising approach that has received limited attention in previous studies. This approach leverages the complementary strengths of both architectures to improve generalizability and bridge their individual performance gaps in phishing website detection.
 
+3- Our experiments show that the proposed approach demonstrates a balance between accuracy and speed at low computational cost.
+
