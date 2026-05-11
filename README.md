@@ -18,7 +18,7 @@ To address these limitations, we propose the following contributions:
 
 3- Our experimental results show that the proposed approach demonstrates a balance between accuracy and speed at low computational cost, with an average accuracy of 97.46% on the test set across five runs and an average computation time of 2.8516×10⁻⁶ seconds per website. 
 
-The student model (MLP) size: **0.17 MB** (lightweight and computationally efficient)
+The proposed model (student MLP) size: **0.17 MB** (lightweight and computationally efficient)
 
 # Methodology
 
