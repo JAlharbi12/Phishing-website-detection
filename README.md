@@ -82,7 +82,7 @@ Each file serves a specific purpose in the phishing website detection pipeline:
 # Usage Instructions
 
 ### Full Pipeline (Optional):
-This section describes the full pipeline can be executed to regenerate the dataset from scratch, starting from data collection and feature extraction through to model training and evaluation, by following these steps:
+This section describes how the full pipeline can be executed to regenerate the dataset from scratch, starting from data collection and feature extraction through to model training and evaluation, by following these steps:
 
 1- **Feature Definition:** Run *Data_Collection_Static_Content_Based_Features_Code_.ipynb* to define and generate the initial 41 static content-based features.
 
