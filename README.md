@@ -12,18 +12,27 @@ Despite the efforts of researchers to prevent phishing website attacks, current 
 
 To address these limitations, we propose the following contributions:
 
-1- We constructed a realistic and up-to-date dataset derived from publicly available phishing and legitimate websites, enriched with features independent of language and third-party services. This dataset contains 32 content-based features, including those that indicate JavaScript obfuscation derived from the structure of JavaScript code that has been statically parsed. We extracted these features from Hypertext Markup Language (HTML) structures, embedded JavaScript elements, and external JavaScript files directly from target sites using static parsing. 
+1- We provide a specialize web content dataset containing 32 content-based features, including those that indicate JavaScript obfuscation through static parsing of publicly available phishing and legitimate websites. The features are independent of language and third-party services.
 
-2- We applied knowledge distillation from a tree-based model (XGBoost) to a neural network model (MLP) for web content analysis, which is a promising approach that has received limited attention in previous studies. This approach leverages the complementary strengths of both architectures to improve generalizability and bridge their individual performance gaps in phishing website detection.
+2- We introduce a knowledge distillation-based approach for web content-based phishing detection by transferring expertise from a high-performing XGBoost teacher model to a lightweight MLP student model, an approach that has received limited attention in previous studies.
 
-3- Our experimental results show that the proposed approach demonstrates a balance between accuracy and speed at low computational cost, with an average accuracy of 97.46% on the test set across five runs and an average computation time of 2.8516×10⁻⁶ seconds per website. 
+The proposed model achieves **97.46%** accuracy on the test set across five runs with an average computation time of **2.8516×10⁻⁶ seconds** per website and a model size of **0.17 MB**, demonstrating high performance with low computational cost.
 
-The proposed model (student MLP) size: **0.17 MB** (lightweight and computationally efficient)
+### Reproducibility
+For reproducibility, all code files and the final processed dataset are provided as supplementary materials with the PeerJ Computer Science journal submission. 
+
+**To quickly reproduce the reported results,** download the final dataset (*Final_dataset_32content_based_features.csv*) and run the model training notebook as follows:
+
+1- Ensure the required environment is set up as described in the Requirements section (using the local machine and installing model training requirements).
+
+2- Run the *Model_Training_Code_.ipynb*
+
+This will directly reproduce the training and evaluation results using the processed dataset.
 
 # Methodology
 
 ### Data Collection & Data Pre-processing: 
-The dataset used in this study was collected from multiple sources. Legitimate URL data was obtained from publicly available datasets (e.g., [Kaggle](https://www.kaggle.com/datasets/bpmtips/46-million-domain-names-with-size-common-crawl) and [Mendeley Data)](https://doi.org/10.17632/n96ncsr5g4.1) , while phishing URLs were collected using the [PhishTank](https://phishtank.org) API. The API provides JSON reports of URLs, including both verified and unverified entries. Only URLs confirmed as live and verified phishing were retained. For phishing samples, web content was extracted using an API key in batches. Similarly, legitimate samples were also processed in batches. This approach was adopted to manage computational resources efficiently and to avoid interruptions or failures due to large volumes of requests. 
+The dataset used in this study was collected from multiple sources. Legitimate URL data was obtained from publicly available datasets (e.g., Kaggle and Mendeley Data, while phishing URLs were collected using the PhishTank API. The API provides JSON reports of URLs, including both verified and unverified entries. Only URLs confirmed as live and verified phishing were retained. For phishing samples, web content was extracted using an API key in batches. Similarly, legitimate samples were also processed in batches. This approach was adopted to manage computational resources efficiently and to avoid interruptions or failures due to large volumes of requests. 
 
 The collected data was then aggregated into a unified dataset. After feature extraction, the dataset contained:
 
@@ -33,7 +42,7 @@ The collected data was then aggregated into a unified dataset. After feature ext
 Data pre-processing steps (such as duplicate removal and handling missing values) and feature engineering, specifically feature selection, were applied. As a result, **a final dataset of 23,105 samples with 32 static content-based features was used for training and evaluation**. The labels are defined as: *Legitimate website = 0, Phishing website = 1*
 
 ### Feature Extraction:
-Feature extraction was performed to convert raw web content into structured representations suitable for machine learning. An initial total of 41 static content-based features were extracted from each website, capturing structural and content-related characteristics used for phishing detection. The extracted features include information derived from HTML structure, embedded JavaScript, and external JavaScript files.
+Feature extraction was performed to convert raw web content into structured representations suitable for machine learning. An initial total of 41 static content-based features were extracted from each website, capturing structural and content-related characteristics used for phishing detection. The extracted features include information derived from Hypertext Markup Language (HTML) structure, embedded JavaScript, and external JavaScript files.
 
 ### Model Training: 
 Model training was conducted using the processed dataset after feature extraction and pre-processing. Three models were developed and evaluated: a baseline Multilayer Perceptron (MLP), XGBoost, and a knowledge distillation approach (teacher-student learning), which applies the knowledge distillation from the XGBoost teacher to the MLP student to leverage the strong predictive capabilities of the XGBoost algorithm to enhance the performance of the MLP deep learning model while maintaining its lightweight nature for efficient web content analysis at a low computational cost. The models were trained on the selected feature set, and their performance was evaluated using standard classification metrics (Accuracy, Recall, Precision, F1-score, and Time).
@@ -70,18 +79,10 @@ Each file serves a specific purpose in the phishing website detection pipeline:
 - *Model_Training_Code_.ipynb*, the processed dataset is used to train and evaluate three models: a baseline MLP model, an XGBoost model, and a knowledge distillation approach combining both.
 - *Final_dataset_32content_based_features.csv*, the final processed dataset used for training, evaluation, and reporting of results.
 
-# Usege Instructions
-### Quick Reproduction
-To quickly reproduce the reported results, use the final dataset (*Final_dataset_32content_based_features.csv*) and run the model training notebook as follows:
-
-1- Ensure the required environment is set up as described in the Requirements section (using the local machine and installing model training requirements). 
-
-2- Run the *Model_Training_Code_.ipynb*
-
-This will directly reproduce the training and evaluation results using the processed dataset.
+# Usage Instructions
 
 ### Full Pipeline (Optional):
-Alternatively, the full pipeline can be executed to regenerate the dataset from scratch, starting from data collection and feature extraction through to model training and evaluation, by following these steps:
+This section describes the full pipeline can be executed to regenerate the dataset from scratch, starting from data collection and feature extraction through to model training and evaluation, by following these steps:
 
 1- **Feature Definition:** Run *Data_Collection_Static_Content_Based_Features_Code_.ipynb* to define and generate the initial 41 static content-based features.
 
@@ -98,9 +99,17 @@ The selection of the 32 most important features is implemented within the traini
 The PhishTank API used for phishing data collection requires user registration on the PhishTank platform and API key access. Additionally, the full data collection and feature extraction pipeline is provided for completeness; however, its execution is optional and not required to reproduce the reported results, as the final processed dataset is included.
 
 
-## **Acknowledgment**
-Part of this work is based on an open-source implementation developed by *Biagio Montaruli et al. (2023)*, available at: [extract_features_html.py](https://github.com/advmlphish/raze_to_the_ground_aisec23/blob/main/src/extract_features_html.py)
+# **Acknowledgment**
+Part of this work is based on an open-source implementation developed by *Biagio Montaruli et al. (2023)*, available at: extract_features_html.py, https://github.com/advmlphish/raze_to_the_ground_aisec23/blob/main/src/extract_features_html.py 
 
+# Citations
+The dataset used in this study:
+
+1- Anil Singh. (2024). 45+ M Domains with size & Language - Common Crawl [Dataset]. Kaggle. https://doi.org/10.34740/KAGGLE/DSV/9615721
+
+2- Ariyadasa, Subhash; Fernando, Shantha; Fernando, Subha (2021), “Phishing Websites Dataset”, Mendeley Data, V1, doi: 10.17632/n96ncsr5g4.1
+
+3- PhishTank Available online: https://phishtank.org.
 
 
 ## Authors & Contributions
@@ -110,5 +119,10 @@ Part of this work is based on an open-source implementation developed by *Biagio
 
 **Hind Almisbahi**- Designed the software, Formal analysis, Supervision, Project administration
 
+## License
+The code files and dataset are provided for research 
+and reproducibility purposes only.
 
-
+## Help/Contact 
+For any questions or issues related to running 
+the code, please contact **Jawaher Alharbi** at *jalharbi0086@stu.kau.edu.sa* 
