@@ -12,11 +12,11 @@ Despite the efforts of researchers to prevent phishing website attacks, current 
 
 To address these limitations, we propose the following contributions:
 
-1- We provide a specialized web content dataset containing 32 content-based features, including those that indicate JavaScript obfuscation through static parsing of publicly available phishing and legitimate websites. The features are independent of language and third-party services.
+1- We provide a realistic dataset containing 32 content-based features, including indicators of JavaScript obfuscation extracted through static parsing of publicly available phishing and legitimate websites. The features are independent of language and third-party services.
 
 2- We introduce a knowledge distillation-based approach for web content-based phishing detection by transferring expertise from a high-performing XGBoost teacher model to a lightweight MLP student model, an approach that has received limited attention in previous studies.
 
-The proposed model achieves **97.46%** accuracy on the test set across five runs with an average computation time of **2.8516×10⁻⁶ seconds** per website and a model size of **0.17 MB**, demonstrating high performance with low computational cost.
+The proposed model achieves an average accuracy of **97.46%** on the test set across five runs, with an average computation time of **2.8516×10⁻⁶ seconds** per website and a model size of **0.17 MB**, demonstrating high performance with low computational cost.
 
 ### Reproducibility
 For reproducibility, all code files and the final processed dataset are provided as supplementary materials with the PeerJ Computer Science journal submission. 
