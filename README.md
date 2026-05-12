@@ -113,16 +113,16 @@ The dataset used in this study:
 
 
 ## Authors & Contributions
-**Jawaher Alharbi**- Wrote the code, Resources, Data Curation, Methodology, Designed the software, Formal analysis, Project administration
+**Jawaher Alharbi**- Performed the experiments, Analyzed the data, Wrote the code, Resources, Data Curation, Designed the software, Conceived and designed the experiments, Project administration
 
-**Manal Bayousef**- Methodology, Formal analysis, Supervision, Project administration
+**Manal Bayousef**- Analyzed the data, Supervision, Conceived and designed the experiments, Project administration
 
-**Hind Almisbahi**- Designed the software, Formal analysis, Supervision, Project administration
+**Hind Almisbahi**- Designed the software, Analyzed the data, Supervision, Conceived and designed the experiments, Project administration
+
+All authors are affiliated with: Department of Information Technology, Faculty of Computing and Information Technology, King Abdulaziz University, Jeddah, Saudi Arabia
 
 ## License
-The code files and dataset are provided for research 
-and reproducibility purposes only.
+The code files and dataset are provided for research and reproducibility purposes only.
 
 ## Help/Contact 
-For any questions or issues related to running 
-the code, please contact **Jawaher Alharbi** at *jalharbi0086@stu.kau.edu.sa* 
+For any questions or issues related to running the code, please contact **Jawaher Alharbi** at *jalharbi0086@stu.kau.edu.sa* 
