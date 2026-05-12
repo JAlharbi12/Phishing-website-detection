@@ -53,7 +53,7 @@ The experiments were conducted using both a virtual machine and a local environm
 
 ### Software Dependencies:
 - VirtualBox virtual machine: Python 3.11.5
-- local machine: Python 3.10.9
+- Local machine: Python 3.10.9
 
 The main libraries used include:
 
