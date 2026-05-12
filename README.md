@@ -18,7 +18,7 @@ To address these limitations, we propose the following contributions:
 
 The proposed model achieves an average accuracy of **97.46%** on the test set across five runs, with an average computation time of **2.8516×10⁻⁶ seconds** per website and a model size of **0.17 MB**, demonstrating high performance with low computational cost.
 
-### Steps to Reproduce the Results:
+### Quick Reproduction
 For reproducibility, all code files and the final processed dataset are provided as supplementary materials with the PeerJ Computer Science journal submission. 
 
 **To quickly reproduce the reported results,** download the final dataset (*Final_dataset_32content_based_features.csv*) and run the model training notebook as follows:
