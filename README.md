@@ -79,7 +79,7 @@ Each file serves a specific purpose in the phishing website detection pipeline:
 - *Model_Training_Code_.ipynb*, the processed dataset is used to train and evaluate three models: a baseline MLP model, an XGBoost model, and a knowledge distillation approach combining both.
 - *Final_dataset_32content_based_features.csv*, the final processed dataset used for training, evaluation, and reporting of results.
 
-# Usage Instructions
+# Usage Instructions For Full Pipeline (Optional):
 
 ### Full Pipeline (Optional):
 This section describes the full pipeline can be executed to regenerate the dataset from scratch, starting from data collection and feature extraction through to model training and evaluation, by following these steps:
